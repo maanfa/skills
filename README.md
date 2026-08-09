@@ -15,6 +15,40 @@
         └── part-N-*.md              文章
 ```
 
+## 安装指南
+
+纯 Markdown 技能，无需构建，复制目录即可（目录名须与 SKILL.md 的 `name` 一致）。
+
+**opencode：一键脚本**
+
+```powershell
+# Windows PowerShell，在仓库根目录执行
+.\install.ps1
+# 默认安装到 ~/.config/opencode/skills/；也可指定目标
+.\install.ps1 -Target "$HOME\.claude\skills"
+```
+
+或手动复制：
+
+```bash
+git clone https://github.com/maanfa/skills.git
+cp -r skills/geometry-interactive-editor ~/.config/opencode/skills/
+```
+
+**Claude Code**
+
+```bash
+cp -r skills/geometry-interactive-editor ~/.claude/skills/
+```
+
+**通用 Agent Skills 目录**（opencode 也会自动扫描）
+
+```bash
+cp -r skills/geometry-interactive-editor ~/.agents/skills/
+```
+
+> 安装后请重启工具（技能在启动时加载）。若用 opencode，也可通过 `skills.paths` / `skills.urls` 直接指向本仓库 `skills/` 目录，免复制。
+
 ## 已收录
 
 ### skills/geometry-interactive-editor —— 前端通用交互式几何编辑器
